@@ -20,6 +20,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (data) {
         fht = data.main.temp * 9 / 5 + 32;
+	fht = (Math.round(fht * 100)/100).toFixed(2);
         cels = data.main.temp;
         $("#city").html('<strong>' + data.name + '</strong> (' + data.sys.country + ')');
         $("#temp").html('<strong>' + data.main.temp + ' C</strong>');
